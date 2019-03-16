@@ -7,98 +7,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>GyroDodge</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
-
-    html,
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: white;
-      overflow: hidden;
-    }
-
-    .overlay {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100vw;
-      height: 100vh;
-      text-align: center;
-      display: flex;
-      opacity: 0;
-      pointer-events: none;
-      transition: 0.8s ease;
-    }
-
-    .info {
-      margin: auto;
-      padding-bottom: 100px;
-    }
-
-    button {
-      padding: 10px;
-      border-radius: 5px;
-      outline: none;
-      border: 1px solid white;
-      background-color: transparent;
-      color: white;
-      cursor: pointer;
-    }
-
-    button:hover {
-      border: 1px solid white;
-      background-color: #ffffff;
-      color: #1d1d1d;
-    }
-
-    .ui-text {
-      position: absolute;
-      color: white;
-      font-size: 15px;
-      transform: translateX(0);
-      transition: 0.8s ease;
-    }
-
-    #score {
-      left: 20px;
-      top: 20px;
-    }
-
-    #level {
-      right: 20px;
-      top: 20px;
-    }
-
-    #game-start {
-      display: flex;
-      opacity: 1;
-    }
-
-    .animate {
-      transform: translateX(-50%) !important;
-      left: 50% !important;
-      top: 55% !important;
-      font-size: 24px !important;
-    }
-
-    .hide {
-      opacity: 0 !important;
-      pointer-events: none !important;
-      transition: 0.2s;
-    }
-
-    .show {
-      opacity: 1 !important;
-      pointer-events: all !important;
-      transition: 0.2s;
-    }
-  </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.sound.min.js"></script>
 
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 
 <body>
@@ -126,7 +38,6 @@
   <h3 class="ui-text" id="level">Level: </h3>
   <h3 class="ui-text" id="score">Score: </h3>
 
-
   <script src="./js/AssetMan.js"></script>
   <script src="./js/Bullet.js"></script>
   <script src="./js/Particle.js"></script>
@@ -134,6 +45,12 @@
   <script src="./js/Player.js"></script>
   <script src="./js/Game.js"></script>
   <script src="./js/index.js"></script>
+  <div id="p5_loading" class="loadingclass">
+    <div class="loading-wrapper">
+      <div class="loader"></div>
+      <p>Loading Please Wait...</p>
+    </div>
+  </div>
 
 
 </body>
