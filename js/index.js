@@ -25,7 +25,7 @@ function mouseReleased() {
 }
 
 function draw() {
-  background(35, 105);
+  background(game.bgColor);
 
   // pause the game until the timer runs out
   if (game.countDown >= 0) return;
@@ -33,6 +33,7 @@ function draw() {
     game.win();
     noLoop();
   }
+
   // pause the game on gameover
   if (game.gameover) {
     game.over();
@@ -76,5 +77,6 @@ function draw() {
         }
       }
     }
-  } // - for
+  }
+
 }
