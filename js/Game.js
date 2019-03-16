@@ -17,7 +17,7 @@ class Game {
     this.sounds = assets.sounds;
     this.level = 1;
     this.rockBreakRadius = 25;
-
+    
     this.domRestart = document.getElementById('game-restart');
     this.domGamestart = document.getElementById('game-start');
     this.domGamestartTimer = document.getElementById('game-start-timer');
@@ -29,6 +29,7 @@ class Game {
     this.domGameWinLevel = document.getElementById('game-win-level');
     this.domLevel.textContent = 'Level: ' + (this.level)
 
+    this.showStartScreen();
     this.domRestart.addEventListener('click', () => {
       this.restart();
     });
