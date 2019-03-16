@@ -13,7 +13,7 @@ class Game {
     this.bullets = [];
     this.rocks = [];
     this.sounds = assets.sounds;
-    this.level = 3;
+    this.level = 1;
     this.rockBreakRadius = 25;
 
     this.domRestart = document.getElementById('game-restart');
@@ -120,7 +120,7 @@ class Game {
     this.gameover = false;
     this.gamewin = false;
     this.countDown = 1;
-    // this.ship = new Player();
+    this.ship.reset();
     this.bullets = [];
     this.rocks = [];
     if (this.level === 1) {
