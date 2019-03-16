@@ -66,7 +66,7 @@ class Game {
     this.restart();
   }
   win() {
-    this.domGameNextLevel.textContent = 'Play Next Level'   
+    this.domGameNextLevel.textContent = 'Play Next Level'
     this.domLevel.textContent = 'Level: ' + (this.level + 1)
     this.domGameWinLevel.textContent = 'You Win! Level ' + (this.level) + ' Cleared!'
     this.showGameWin();
@@ -106,7 +106,11 @@ class Game {
     this.domGameover.classList.add('show');
     this.domScore.classList.add('animate');
     this.gameover && this.sounds.gameover.play();
-    this.gamewin && this.sounds.gamewin.play();
+
+    if (this.gamewin) {
+      this.sounds.gamewin.amp(0.5);
+      this.sounds.gamewin.play();
+    }
   }
 
   hideGameOver() {
@@ -115,14 +119,7 @@ class Game {
     this.domScore.classList.remove('animate');
   }
 
-  init() {
-    this.score = 0;
-    this.gameover = false;
-    this.gamewin = false;
-    this.countDown = 1;
-    this.ship.reset();
-    this.bullets = [];
-    this.rocks = [];
+  handleLevels() {
     if (this.level === 1) {
       let r = new Rock();
       r.radius = 15;
@@ -153,4 +150,14 @@ class Game {
     }
   }
 
+  init() {
+    this.score = 0;
+    this.gameover = false;
+    this.gamewin = false;
+    this.countDown = 1;
+    this.ship.reset();
+    this.bullets = [];
+    this.rocks = [];
+    this.handleLevels();
+  }
 }

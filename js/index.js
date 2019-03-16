@@ -21,7 +21,7 @@ function setup() {
 }
 
 function mouseReleased() {
-  game.ship.shoot();
+  game && game.ship.shoot();
 }
 
 function draw() {
@@ -43,6 +43,10 @@ function draw() {
   // all the updates and logics
   game.ship.update();
   game.ship.render();
+
+  if (game.ship.hitWall()) {
+    game.gameover = true;
+  }
   for (const rock of game.rocks) {
     if (game.ship.hit(rock)) {
       game.gameover = true;

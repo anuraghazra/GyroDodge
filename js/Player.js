@@ -103,6 +103,13 @@ class Player {
     return this.collidePointPoly(this.pos.x, this.pos.y, target, target.vertices);
   }
 
+  hitWall() {
+    if (this.pos.x > width || this.pos.x < 0 || this.pos.y > height || this.pos.y < 0) {
+      return true;
+    }
+    return false;
+  }
+
   render() {
 
     push();
