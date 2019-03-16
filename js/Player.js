@@ -111,7 +111,6 @@ class Player {
   }
 
   render() {
-
     push();
     translate(this.pos.x, this.pos.y);
     // text(this.tailDots.length, 100, 100)

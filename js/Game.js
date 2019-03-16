@@ -12,6 +12,7 @@ class Game {
     this.countDown = 1;
     this.ship = new Player();
     this.bullets = [];
+    this.particles = [];
     this.rocks = [];
     this.sounds = assets.sounds;
     this.level = 1;
@@ -46,6 +47,7 @@ class Game {
       window.clearInterval(timer);
     }, 2000);
 
+    this.sounds.blast.amp(0.03);
     this.sounds.music.setLoop(true)
     this.sounds.music.amp(0.2);
     this.sounds.music.play();
@@ -120,9 +122,7 @@ class Game {
 
   handleLevels() {
     if (this.level === 1) {
-      let r = new Rock();
-      r.radius = 15;
-      this.rocks.push(r);
+      this.rocks.push(new Rock(random(width), random(height), 20));
     }
     if (this.level === 2) {
       this.rockBreakRadius = 25;
