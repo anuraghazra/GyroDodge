@@ -19,6 +19,7 @@ function preload() {
 function setup() {
   createCanvas(ww, wh);
   game = new Game(assets);
+  game.restart();
   game.init();
 }
 
