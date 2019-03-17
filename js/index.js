@@ -3,6 +3,8 @@
  * @author <hazru.anurag@gmail.com>
  * @github
  * https://anuraghazra.github.io/GyroDodge 
+ * 
+ * NOTE: All the sound effects are taken from <https://freesound.org>
  */
 
 let game;

@@ -17,7 +17,7 @@ class Game {
     this.sounds = assets.sounds;
     this.level = 1;
     this.rockBreakRadius = 25;
-    
+
     this.domRestart = document.getElementById('game-restart');
     this.domGamestart = document.getElementById('game-start');
     this.domGamestartTimer = document.getElementById('game-start-timer');
@@ -123,7 +123,9 @@ class Game {
 
   handleLevels() {
     if (this.level === 1) {
-      this.rocks.push(new Rock(random(width), random(height), 20));
+      for (let i = 0; i < 3; i++) {
+        this.rocks.push(new Rock(random(width), random(height), 20));
+      }
     }
     if (this.level === 2) {
       this.rockBreakRadius = 25;
